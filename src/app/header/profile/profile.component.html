@@ -1,0 +1,72 @@
+<div class="container my-5">
+  <h2 class="text-center mb-4">Your Account</h2>
+  <div class="col-md-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Profile Information</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Name:</strong> {{ user?.username }}</li>
+          <li class="list-group-item"><strong>Email:</strong> {{ user?.email }}</li>
+          <li class="list-group-item">
+            <strong>Address:</strong> {{ user?.address?.address }}, {{ user?.address?.city }}, {{ user?.address?.state }}
+            <br /><span class="mx-5">{{ user?.address?.country }}, {{ user?.address?.postalCode }}</span>
+          </li>
+        </ul>
+        <a routerLink="/editprofile" class="btn btn-primary mt-3">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Your Orders Section -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Your Orders</h5>
+          <p class="card-text">View and manage your orders.</p>
+          <a href="#" class="btn btn-primary">Go to Your Orders</a>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Login, Name, and Mobile Number Section -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Edit Login, Name</h5>
+          <p class="card-text">Update your login information, name</p>
+          <a routerLink="/editprofile" class="btn btn-primary">Edit Profile</a>
+        </div>
+      </div>
+    </div>
+    <!-- Your Addresses Section -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Your Addresses</h5>
+          <p class="card-text">Edit or add new addresses for your deliveries.</p>
+          <a routerLink="/editaddress" class="btn btn-primary">Manage Addresses</a>
+        </div>
+      </div>
+    </div>
+    <!-- Edit or Add Payment Methods Section -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Edit or Add Payment Methods</h5>
+          <p class="card-text">Update your payment information or add new payment methods.</p>
+          <a href="/payment-methods" class="btn btn-primary">Manage Payment Methods</a>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Us Section -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Contact Us</h5>
+          <p class="card-text">Get in touch with our customer support team.</p>
+          <a href="/contact-us" class="btn btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

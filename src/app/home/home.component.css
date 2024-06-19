@@ -1,0 +1,76 @@
+.carousel-inner {
+  position: relative;
+}
+
+.carousel-item {
+  display: none;
+  transition: transform 0.6s ease;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  /* Adjust the height as needed */
+  overflow-y: auto;
+}
+
+.form-check-label {
+  margin-left: 8px;
+  /* Space between checkbox and label */
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.dropdown-menu .row {
+  margin: 0;
+}
+
+.dropdown-menu .col-xl-3,
+.dropdown-menu .col-lg-4,
+.dropdown-menu .col-md-6,
+.dropdown-menu .col-sm-12 {
+  padding: 0 8px;
+  /* Adjust the padding for better spacing */
+}
+
+h4 {
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .card-up {
+  height: 120px;
+  overflow: hidden;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.testimonial-card .avatar {
+  width: 110px;
+  margin-top: -60px;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+

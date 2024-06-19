@@ -1,0 +1,112 @@
+@if (incorrectData) {
+  <app-dialog content="Enter Valid Data to submit" id="dialogue" (close)="close()"></app-dialog>
+  }
+<main>
+    <section class="container-lg d-flex flex-column vh-100 signupForm mt-md-4"> <!-- Increased container width -->
+        <div class="row align-items-center justify-content-center g-0 h-lg-100 py-8">
+            <div class="col-lg-7 col-md-10 py-8 py-xl-0"> <!-- Adjusted column width -->
+                <!-- Card -->
+                <div class="card shadow">
+                    <!-- Card body -->
+                    <div class="card-body p-6">
+                        <div class="mb-4 d-flex flex-column align-items-center">
+                            <a routerLink="/" class="d-flex justify-content-center "><img src="TradeNest.png"
+                                    class="mb-4 TradeNestLogo" alt="logo"></a>
+                            <h1 class="mb-1 fw-bold ">Sign up</h1>
+                            <span class="align-self-start mt-3">
+                                Already have an account?
+                                <a routerLink="/login" class="ms-1 text-decoration-none">Sign in</a>
+                            </span>
+                        </div>
+                        <!-- Form -->
+                        <form class="needs-validation" (ngSubmit)="newSignUp()" novalidate="">
+                          <div class="mb-3">
+                            <label for="streetAddress" class="form-label">Username</label>
+                            <input type="text" id="username" class="form-control" name="username"
+                                placeholder="Enter your street username" required="" [(ngModel)]="username">
+                            <div class="invalid-feedback">Please enter your Username</div>
+                        </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control" name="email" [(ngModel)]="email" required>
+                                <div *ngIf="email && !isEmailValid(email)" class="invalid-feedback">Invalid email.</div>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" id="password" class="form-control" name="password" [(ngModel)]="password" required>
+                                <div *ngIf="password && !isPasswordValid(password)" class="invalid-feedback">Invalid password.</div>
+                              </div>
+
+                            <div class="mb-3">
+                                <label for="conpassword" class="form-label">Conform Password</label>
+                                <input type="password" id="conpassword" class="form-control" name="conpassword"
+                                    placeholder="**************" required="" fdprocessedid="z594dm" [(ngModel)]="confPassword">
+                                <div class="invalid-feedback">Please enter valid password.</div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="mb-3">
+                                <label for="streetAddress" class="form-label">Street Address</label>
+                                <input type="text" id="streetAddress" class="form-control" name="streetAddress"
+                                    placeholder="Enter your street address" required="" [(ngModel)]="streetAddress">
+                                <div class="invalid-feedback">Please enter your street address.</div>
+                            </div>
+                            <!-- City, State, Postal Code -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" id="city" class="form-control" name="city"
+                                        placeholder="Enter your city" required="" [(ngModel)]="city">
+                                    <div class="invalid-feedback">Please enter your city.</div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="state" class="form-label">State</label>
+                                    <input type="text" id="state" class="form-control" name="state"
+                                        placeholder="Enter your state" required="" [(ngModel)]="statelive">
+                                    <div class="invalid-feedback">Please enter your state.</div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="postalCode" class="form-label">Postal Code</label>
+                                    <input type="text" id="postalCode" class="form-control" name="postalCode"
+                                        placeholder="Enter your postal code" required="" [(ngModel)]="postalcode">
+                                    <div class="invalid-feedback">Please enter your postal code.</div>
+                                </div>
+                            </div>
+                            <!-- Country -->
+                            <div class="mb-3">
+                                <label for="country" class="form-label">Country</label>
+                                <input type="text" id="country" class="form-control" name="country"
+                                    placeholder="Enter your country" required="" [(ngModel)]="country">
+                                <div class="invalid-feedback">Please enter your country.</div>
+                            </div>
+
+                            <!-- Checkbox -->
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="agreeCheck" required="">
+                                    <label class="form-check-label" for="agreeCheck">
+                                        <span>
+                                            I agree to the
+                                            <a href="terms-condition-page.html" class="text-decoration-none">Terms
+                                                of Service</a>
+                                            and
+                                            <a href="terms-condition-page.html" class="text-decoration-none">Privacy
+                                                Policy.</a>
+                                        </span>
+                                    </label>
+                                    <div class="invalid-feedback">You must agree before submitting.</div>
+                                </div>
+                            </div>
+
+                            <!-- Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Create Free Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

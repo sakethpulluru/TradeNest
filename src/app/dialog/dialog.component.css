@@ -1,0 +1,71 @@
+/* CSS */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure dialog is on top of other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out; /* Fade in animation */
+}
+
+.modal-dialog {
+  max-width: 400px; /* Adjust as needed */
+  margin: 1rem;
+  animation: slideInUp 0.3s ease-out; /* Slide in animation */
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.modal-header {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6; /* Bottom border */
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+.modal-footer {
+  padding: 1rem;
+  border-top: 1px solid #dee2e6; /* Top border */
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Button color */
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Hover color */
+}
+
+.close {
+  color: #000;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.close:hover {
+  opacity: 1;
+}

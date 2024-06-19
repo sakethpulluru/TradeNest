@@ -1,0 +1,16 @@
+<app-dialog *ngIf="!notLogedin" [content]="'Login to add products to cart'" (close)="close()"></app-dialog>
+<div class="card product-card">
+  <img [src]="product.imageUrl" class="card-img-top product-img" [alt]="product.name">
+  <div class="card-body">
+    <h5 class="card-title d-flex justify-content-center mb-3">{{ product.name }}</h5>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary add-to-cart-btn" *ngIf="!isProductInCart()" (click)="addToCart()">Add to Cart</button>
+      <div *ngIf="isProductInCart()" class="d-flex align-items-center">
+        <button class="btn btn-primary" (click)="addToCart()">+</button>
+        <span class="mx-2">{{ getProductQuantity() }}</span>
+        <button class="btn btn-danger" (click)="removeFromCart()">-</button>
+      </div>
+      <button class="btn btn-success view-btn" (click)="onView()">View</button>
+    </div>
+  </div>
+</div>

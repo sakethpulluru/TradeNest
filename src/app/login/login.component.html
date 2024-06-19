@@ -1,0 +1,64 @@
+@if (incorrectData) {
+<app-dialog content="Enter Valid Username and Password" id="dialogue" (close)="close()"></app-dialog>
+}
+<section class="signinForm">
+  <div class="row align-items-center justify-content-center g-0 h-lg-100 py-8 mt-4">
+    <div class="col-lg-5 col-md-8 py-8 py-xl-0">
+      <!-- Card -->
+      <div class="card shadow">
+        <!-- Card body -->
+        <div class="card-body p-6">
+          <div class="mb-4 d-flex flex-column align-items-center">
+            <a routerLink="/" class="d-flex justify-content-center"><img src="TradeNest.png" class="mb-4 TradeNestLogo"
+                alt="logo"></a>
+            <h1 class="mb-1 fw-bold">Sign in</h1>
+            <span class="align-self-start">
+              Don’t have an account?
+              <a routerLink="/signup" class="ms-1 text-decoration-none">Sign up</a>
+            </span>
+          </div>
+          <!-- Form -->
+          <form class="needs-validation" (ngSubmit)="newLogin()" novalidate="">
+            <div class="mb-3">
+              <label for="email" class="form-label">Username or email</label>
+              <input type="email" id="email" class="form-control" name="username" placeholder="Email address here"
+                required="" fdprocessedid="ipm3jd" [(ngModel)]="username" #usernameInput="ngModel">
+              <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)" class="invalid-feedback">
+                Please enter a valid username.
+              </div>
+            </div>
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" name="password" placeholder="**************"
+                required="" fdprocessedid="z594dm" [(ngModel)]="password" #passwordInput="ngModel">
+              <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="invalid-feedback">
+                Please enter a valid password.
+              </div>
+            </div>
+            <!-- Checkbox -->
+            <div class="d-flex justify-content-between mb-4">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="rememberme" required="" [(ngModel)]="check"
+                  name="rememberMe">
+                <label class="form-check-label" for="rememberme">Remember me</label>
+                <div *ngIf="check" class="invalid-feedback">You must agree before submitting.</div>
+              </div>
+              <div>
+                <a href="forgotpassword.html" class="text-decoration-none">Forgot your password?</a>
+              </div>
+            </div>
+            <div>
+              <!-- Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary" fdprocessedid="wcofr">Sign in</button>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

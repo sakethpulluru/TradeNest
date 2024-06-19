@@ -1,0 +1,127 @@
+<div class="container-fluid mx-5 my-5">
+  <h2 class="text-center">Products</h2>
+  <div class="row">
+    <div class="col-xl-4 col-lg-3 col-md-6 col-sm-12">
+      <h4>Filter by Category</h4>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Select Categories
+        </button>
+        <ul class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-2" *ngFor="let category of categories">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category_{{category}}" (change)="onCategoryChange(category, $event)">
+                <label class="form-check-label" for="category_{{category}}">{{ category }}</label>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <div #productsCarousel id="productsCarousel" class="carousel slide container-fluid justify-content-center" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Carousel Items -->
+      <div *ngFor="let productChunk of chunkedProducts; let i = index" class="carousel-item" [class.active]="i === currentPage">
+        <div class="row justify-content-around">
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-8 h-50" *ngFor="let product of productChunk">
+            <app-product [product]="product" (onview)="onProductSelected($event)" class="mx-3 my-3 w-m-50"></app-product>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#productsCarousel" data-bs-slide="prev" (click)="goToPage(currentPage - 1)">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#productsCarousel" data-bs-slide="next" (click)="goToPage(currentPage + 1)">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Pagination Controls -->
+  <nav aria-label="Product page navigation">
+    <ul class="pagination justify-content-center mt-3">
+      <li class="page-item" [class.disabled]="currentPage === 0">
+        <a class="page-link" href="#" (click)="goToPage(currentPage - 1)">Previous</a>
+      </li>
+      <li class="page-item" *ngFor="let page of chunkedProducts; let i = index" [class.active]="i === currentPage">
+        <a class="page-link" href="#" (click)="goToPage(i)">{{ i + 1 }}</a>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages - 1">
+        <a class="page-link" href="#" (click)="goToPage(currentPage + 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+  <section>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-xl-8 text-center">
+        <h3 class="mb-4">Testimonials</h3>
+        <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+          numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
+          quisquam eum porro a pariatur veniam.
+        </p>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-5 mb-md-0">
+        <div class="card testimonial-card">
+          <div class="card-up" style="background-color: #9d789b;"></div>
+          <div class="avatar mx-auto bg-white">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+              class="rounded-circle img-fluid" />
+          </div>
+          <div class="card-body">
+            <h4 class="mb-4">Maria Smantha</h4>
+            <hr />
+            <p class="dark-grey-text mt-4">
+              <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet eos adipisci,
+              consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5 mb-md-0">
+        <div class="card testimonial-card">
+          <div class="card-up" style="background-color: #7a81a8;"></div>
+          <div class="avatar mx-auto bg-white">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+              class="rounded-circle img-fluid" />
+          </div>
+          <div class="card-body">
+            <h4 class="mb-4">Lisa Cudrow</h4>
+            <hr />
+            <p class="dark-grey-text mt-4">
+              <i class="fas fa-quote-left pe-2"></i>Neque cupiditate assumenda in maiores
+              repudi mollitia architecto.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-0">
+        <div class="card testimonial-card">
+          <div class="card-up" style="background-color: #6d5b98;"></div>
+          <div class="avatar mx-auto bg-white">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+              class="rounded-circle img-fluid" />
+          </div>
+          <div class="card-body">
+            <h4 class="mb-4">John Smith</h4>
+            <hr />
+            <p class="dark-grey-text mt-4">
+              <i class="fas fa-quote-left pe-2"></i>Delectus impedit saepe officiis ab
+              aliquam repellat rem unde ducimus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

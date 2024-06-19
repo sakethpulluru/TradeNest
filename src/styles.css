@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+    height: 100%;
+
+}
+.TradeNestLogo{
+    width: 20%;
+}
+@media (min-width : 756px) {
+    .TradeNestLogo{
+    width: 25%;
+}
+}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

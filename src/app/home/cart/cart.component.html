@@ -1,0 +1,49 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center mb-4">Shopping Cart</h2>
+      <div *ngIf="cart.length === 0" class="alert alert-warning text-center">
+        Your cart is empty.
+      </div>
+      <div *ngIf="cart.length > 0" class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of cart">
+              <td>
+                <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-thumbnail">
+                {{ product.name }}
+              </td>
+              <td>Rs.{{ product.price }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>Rs.{{ product.price * product.quantity }}</td>
+              <td>
+                <button class="btn btn-primary btn-sm" (click)="increaseQuantity(product)">+</button>
+                <button class="btn btn-secondary btn-sm mx-1" (click)="decreaseQuantity(product)">-</button>
+                <button class="btn btn-danger btn-sm" (click)="removeFromCart(product)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="text-right"><strong>Total:</strong></td>
+              <td colspan="2">Rs.{{ getTotal() }}</td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="text-center">
+          <button class="btn btn-success mt-3">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

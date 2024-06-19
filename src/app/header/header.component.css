@@ -1,0 +1,40 @@
+/* Dropdown Styles */
+.dropdown-menu {
+    background-color: #fff; /* Background color of the dropdown */
+    border: 1px solid rgba(0, 0, 0, 0.15); /* Border color */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Shadow effect */
+    display: none; /* Hide the dropdown menu by default */
+    position: absolute; /* Position the dropdown absolutely */
+    z-index: 1000; /* Ensure dropdown is above other content */
+
+}
+.dropdown-menu a{
+    color: white;
+}
+.dropdown-menu a:hover{
+    color: black;
+}
+
+.dropdown-item {
+    color: #333; /* Text color of dropdown items */
+    padding: 0.5rem 1rem; /* Padding for dropdown items */
+    text-decoration: none; /* Remove default link underline */
+    display: block; /* Display items as block elements */
+    transition: background-color 0.3s ease; /* Add transition for background color */
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* Background color on hover */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* Show the dropdown menu on hover */
+}
+
+.profilepic {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,27 @@
+.container {
+  max-width: 600px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.text-danger {
+  margin-top: 5px;
+  font-size: 0.875em;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}

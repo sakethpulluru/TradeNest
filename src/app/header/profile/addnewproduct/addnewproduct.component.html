@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <h2 class="text-center mb-4">Add New Product</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label for="name">Product Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="product.name" name="name" placeholder="Enter product name" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="description">Description</label>
+          <textarea id="description" class="form-control" [(ngModel)]="product.description" name="description" placeholder="Enter product description" required></textarea>
+        </div>
+        <div class="form-group mb-3">
+          <label for="price">Price</label>
+          <input type="number" id="price" class="form-control" [(ngModel)]="product.price" name="price" placeholder="Enter product price" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="imageUrl">Image URL</label>
+          <input type="text" id="imageUrl" class="form-control" [(ngModel)]="product.imageUrl" name="imageUrl" placeholder="Enter image URL" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="category">Category</label>
+          <input type="text" id="category" class="form-control" [(ngModel)]="product.category" name="category" placeholder="Enter product category" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="rating">Rating</label>
+          <input type="number" id="rating" class="form-control" [(ngModel)]="product.rating" name="rating" placeholder="Enter product rating" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="brand">Brand</label>
+          <input type="text" id="brand" class="form-control" [(ngModel)]="product.brand" name="brand" placeholder="Enter product brand" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+    </div>
+  </div>
+</div>

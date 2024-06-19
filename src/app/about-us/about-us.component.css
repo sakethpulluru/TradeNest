@@ -1,0 +1,30 @@
+.creator-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.creator-info {
+  margin-top: 20px;
+}
+.contact-info {
+  margin-top: 40px;
+}
+.mission-statement {
+  margin-top: 40px;
+}
+.footer-logo {
+  width: 100px;
+  height: auto;
+  margin-top: 40px;
+}
+footer {
+  bottom: 20px;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+}

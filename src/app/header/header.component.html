@@ -1,0 +1,67 @@
+<header class="p-3 bg-dark text-white">
+  <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <img src="TradeNest.png" class="TradeNestLogo" id="TradeNestLogo" alt="logo"
+        style="border-radius: 50%; width: 4vw; margin-right: 1vw;">
+      TradeNest
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" id="navbarDropdown">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/tandc">Terms And Conditions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/aboutus">About</a>
+        </li>
+      </ul>
+      <form class="d-flex me-2 mb-2 mb-lg-0">
+        <input class="form-control form-control-dark" type="text" placeholder="Search..." aria-label="Search">
+      </form>
+      @if(isLoggedIn==false){
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
+        <li class="nav-item dropdown" style="list-style-type: none;">
+          <a class="btn btn-outline-light me-2 mb-2 mb-md-0 dropdown-toggle text-secondary" routerLink="/login"
+            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </a>
+          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/login" routerLinkActive="router-link-active" >Login</a></li>
+            <li><a class="dropdown-item" routerLink="/signup" routerLinkActive="router-link-active">Signup</a></li>
+          </ul>
+        </li>
+      </div>
+      }@else {
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
+        <a routerLink="/cart" class="btn btn-outline-light me-2 mb-2 mb-md-0">Cart</a>
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
+          <li class="nav-item dropdown" style="list-style-type: none;">
+            <a class="me-2 mb-2 mb-md-0 dropdown-toggle text-secondary text-decoration-none" routerLink="/profile"
+              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="profile.png" class="img-fluid profilepic" alt="Your Image Description">
+              Me
+            </a>
+            <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="router-link-active">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="/AddNewProduct" routerLinkActive="router-link-active">Add a Product</a></li>
+              <li><a class="dropdown-item" routerLinkActive="router-link-active" (click)="logout()">LogOut</a></li>
+            </ul>
+          </li>
+        </div>
+
+      </div>
+      }
+    </div>
+  </nav>
+</header>

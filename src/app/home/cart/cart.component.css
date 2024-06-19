@@ -1,0 +1,97 @@
+.container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.table {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.alert-warning {
+  background-color: #ffeb3b;
+  border: none;
+  color: #856404;
+}
+
+.alert-warning a {
+  color: #856404;
+  text-decoration: underline;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 0;
+  }
+
+  .table {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .table td {
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+
+  .table td:last-child {
+    border-bottom: 0;
+  }
+
+  .table tfoot {
+    display: block;
+  }
+
+  .table tfoot td {
+    display: block;
+    text-align: right;
+  }
+}
+
+/* Image thumbnail styles */
+.img-thumbnail {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
